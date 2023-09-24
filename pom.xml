@@ -11,7 +11,7 @@
     <groupId>pe.edu.upc.aww</groupId>
     <artifactId>TakemeHome0_0</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>TakemeHome0_0</name>
     <description>TakemeHome0_0</description>
     <properties>

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aww.takemehome0_0.entities.Message;
 import pe.edu.upc.aww.takemehome0_0.repositories.IMessageRepository;
-import pe.edu.upc.aww.takemehome0_0.serviceInterfaces.IMessageService;
+import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IMessageService;
 
 import java.util.List;
 @Service

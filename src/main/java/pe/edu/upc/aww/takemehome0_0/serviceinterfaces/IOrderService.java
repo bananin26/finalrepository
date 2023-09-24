@@ -11,4 +11,5 @@ public interface IOrderService {
     public void delete(int idOrder);
     public Order listId(int idOrder);
     List<Order> findByDestinationAddress(String destinationAddress);
+    public List<String[]> totalPurchasesByPerson();
 }

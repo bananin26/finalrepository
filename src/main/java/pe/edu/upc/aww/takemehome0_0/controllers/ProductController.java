@@ -68,7 +68,7 @@ public class ProductController {
         return listDTO;
     }
     @GetMapping("/Description")
-    public List<showDescriptionDTO> showDescription(){
+    public List<showDescriptionDTO> showDescriptionPerOrder(){
         List<String[]>list=pS.counterProductsForUsers();
         List<showDescriptionDTO> listDTO=new ArrayList<>();
         for (String[] data:list){

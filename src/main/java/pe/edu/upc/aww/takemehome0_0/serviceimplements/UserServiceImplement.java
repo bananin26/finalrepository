@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aww.takemehome0_0.entities.User;
 import pe.edu.upc.aww.takemehome0_0.repositories.IUserRepository;
-import pe.edu.upc.aww.takemehome0_0.serviceInterfaces.IUserService;
+import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IUserService;
 
 import java.time.LocalDate;
 import java.util.List;

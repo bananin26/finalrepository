@@ -12,4 +12,5 @@ public interface IProductService {
     List<Product>findByNameProduct(String nameProduct);
     public List<String[]> counterProductsForUsers();
     public List<String []>showDescriptionPerOrder();
+    public List<String[]>listPricesGreaterThan1000();
 }

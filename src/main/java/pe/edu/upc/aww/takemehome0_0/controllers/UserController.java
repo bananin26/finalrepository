@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.MessageByUserDTO;
 import pe.edu.upc.aww.takemehome0_0.dtos.UserDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.User;
-import pe.edu.upc.aww.takemehome0_0.serviceInterfaces.IUserService;
+import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IUserService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.MessageDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.Message;
-import pe.edu.upc.aww.takemehome0_0.serviceInterfaces.IMessageService;
+import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IMessageService;
 
 import java.util.List;
 import java.util.stream.Collectors;

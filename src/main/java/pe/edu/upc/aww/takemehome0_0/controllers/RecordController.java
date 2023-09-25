@@ -2,6 +2,7 @@ package pe.edu.upc.aww.takemehome0_0.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.PointsDTO;
 import pe.edu.upc.aww.takemehome0_0.dtos.RecordDTO;
@@ -17,12 +18,16 @@ import java.util.stream.Collectors;
 public class RecordController {
     @Autowired
     private IRecordService rS;
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     public void register(@RequestBody RecordDTO dto) {
         ModelMapper m = new ModelMapper();
         Record r = m.map(dto, Record.class);
         rS.insert(r);
     }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public List<RecordDTO> to_list() {
         return rS.list().stream().map(x -> {
@@ -31,6 +36,7 @@ public class RecordController {
         }).collect(Collectors.toList());
     }
 
+    @PreAuthorize("hasAuthority('ADMIN') || hasAuthority('USER')")
     @GetMapping("/CountPoints")
     public List<PointsDTO> countPoints(){
         List<String[]>list=rS.countPointsProduct();

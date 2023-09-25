@@ -1,13 +1,7 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
-import pe.edu.upc.aww.takemehome0_0.entities.Category;
-import pe.edu.upc.aww.takemehome0_0.entities.Order;
 import pe.edu.upc.aww.takemehome0_0.entities.Product;
-import pe.edu.upc.aww.takemehome0_0.entities.User;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public class RecordDTO {

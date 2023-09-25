@@ -1,7 +1,6 @@
 package pe.edu.upc.aww.takemehome0_0.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name="products")

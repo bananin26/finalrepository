@@ -13,6 +13,7 @@ public interface IUserService {
     public User listId(int idUser);
     List<User>findByBirthday(LocalDate birthday);
     Long counterUsers();
+
     public List<String[]> quantityMessageSendByPerson();
     public List<String[]> quantityMessageReceiveByPerson();
 }

@@ -1,11 +1,8 @@
 package pe.edu.upc.aww.takemehome0_0.security;
 
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.io.Serializable;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

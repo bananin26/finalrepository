@@ -55,7 +55,6 @@ public class UserController {
         }).collect(Collectors.toList());
     }
 
-    @PreAuthorize("hasAuthority('UDER')")
     @PutMapping
     public void change(@RequestBody UserDTO dto){
         ModelMapper m = new ModelMapper();
@@ -63,13 +62,11 @@ public class UserController {
         uS.insert(p);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/counter")
     public Long counter() {
         return uS.counterUsers();
     }
 
-    @PreAuthorize("hasAuthority('USER')")
     @GetMapping("/QuantityMessageSendByUser")
     public List<MessageByUserDTO> cantidadMensajesEnviadosPorPersona() {
         List<String[]> lista=uS.quantityMessageSendByPerson();
@@ -83,7 +80,6 @@ public class UserController {
         return listaDTO;
     }
 
-    @PreAuthorize("hasAuthority('USER')")
     @GetMapping("/QuantityMessageReceiveByUser")
     public List<MessageByUserDTO> cantidadMensajesRecibidosPorPersona() {
         List<String[]> lista=uS.quantityMessageReceiveByPerson();
@@ -96,10 +92,9 @@ public class UserController {
         }
         return listaDTO;
     }
-
     @GetMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public List<UserDTO> to_list(){
+    public List<UserDTO> listar(){
         return uS.list().stream().map(x->{
             ModelMapper m= new ModelMapper();
             return m.map(x,UserDTO.class);

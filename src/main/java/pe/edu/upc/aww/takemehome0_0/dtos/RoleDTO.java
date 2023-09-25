@@ -2,8 +2,6 @@ package pe.edu.upc.aww.takemehome0_0.dtos;
 
 import pe.edu.upc.aww.takemehome0_0.entities.User;
 
-import javax.persistence.*;
-
 public class RoleDTO {
 
     private Long id;

@@ -12,4 +12,5 @@ public interface IOrderService {
     public Order listId(int idOrder);
     List<Order> findByDestinationAddress(String destinationAddress);
     public List<String[]> totalPurchasesByPerson();
+
 }

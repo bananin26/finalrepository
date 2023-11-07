@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Message")
+@RequestMapping("/Messages")
 public class MessageController {
 
     @Autowired

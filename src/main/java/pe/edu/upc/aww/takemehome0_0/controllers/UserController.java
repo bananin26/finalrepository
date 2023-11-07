@@ -21,6 +21,7 @@ public class UserController {
     private IUserService uS;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void register(@RequestBody UserDTO dto){
         ModelMapper m = new ModelMapper();
         User u= m.map(dto, User.class);

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("records")
+@RequestMapping("Records")
 public class RecordController {
     @Autowired
     private IRecordService rS;

@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface IUserRepository extends JpaRepository<User,Integer> {
     List<User> findByBirthday(LocalDate birthday);
-    public User findByUsername(String username);
 
     @Query("SELECT COUNT(t) FROM User t")
     Long countUsers();

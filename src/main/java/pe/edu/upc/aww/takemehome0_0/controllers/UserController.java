@@ -12,6 +12,7 @@ import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IUserService;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -49,8 +50,10 @@ public class UserController {
     }
 
     @PostMapping("/search")
-    public List<UserDTO> search(@RequestBody LocalDate date){
-        return uS.findByBirthday(date).stream().map(x->{
+    public List<UserDTO> search(@RequestBody Map<String, String> request){
+        String fechaStr = request.get("fecha");
+        LocalDate fecha = LocalDate.parse(fechaStr);
+        return uS.findByBirthday(fecha).stream().map(x->{
             ModelMapper m= new ModelMapper();
             return m.map(x,UserDTO.class);
         }).collect(Collectors.toList());

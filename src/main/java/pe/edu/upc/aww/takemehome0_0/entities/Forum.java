@@ -18,13 +18,13 @@ public class Forum {
 
     @ManyToOne
     @JoinColumn(name = "iduser")
-    private User idUser;
+    private User user;
 
-    public Forum(int idForum, String forum, LocalDate date, User idUser) {
+    public Forum(int idForum, String forum, LocalDate date, User user) {
         this.idForum = idForum;
         this.forum = forum;
         this.date = date;
-        this.idUser = idUser;
+        this.user = user;
     }
 
     public Forum(){
@@ -55,11 +55,11 @@ public class Forum {
         this.date = date;
     }
 
-    public User getIdUser() {
-        return idUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIdUser(User idUser) {
-        this.idUser = idUser;
+    public void setUser(User idUser) {
+        this.user = idUser;
     }
 }

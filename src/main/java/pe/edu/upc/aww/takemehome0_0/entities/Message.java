@@ -13,7 +13,7 @@ public class Message {
     @Column(name = "title", length = 45, nullable = false)
     private String title;
 
-    @Column(name = "content", length = 100, nullable = false)
+    @Column(name = "content", length = 100000, nullable = false)
     private String content;
 
     @ManyToOne

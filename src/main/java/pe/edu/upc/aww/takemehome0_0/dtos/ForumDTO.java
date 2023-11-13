@@ -9,8 +9,7 @@ public class ForumDTO {
     private int idForum;
     private String forum;
     private LocalDate date;
-
-    private User idUser;
+    private User user;
 
     public int getIdForum() {
         return idForum;
@@ -36,11 +35,11 @@ public class ForumDTO {
         this.date = date;
     }
 
-    public User getIdUser() {
-        return idUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIdUser(User idUser) {
-        this.idUser = idUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

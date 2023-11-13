@@ -19,20 +19,20 @@ public class Product {
     private String dimensionsProduct;
     @ManyToOne
     @JoinColumn(name = "id_order")
-    private Order order;
+    private Trips trips;
     @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
 
     public Product(){}
 
-    public Product(int idProduct,String nameProduct,String descriptionProduct,int priceProduct,String dimensionsProduct, User user, Order order,Category category){
+    public Product(int idProduct, String nameProduct, String descriptionProduct, int priceProduct, String dimensionsProduct, User user, Trips trips, Category category){
         this.idProduct=idProduct;
         this.nameProduct=nameProduct;
         this.descriptionProduct=descriptionProduct;
         this.priceProduct=priceProduct;
         this.dimensionsProduct=dimensionsProduct;
-        this.order=order;
+        this.trips = trips;
         this.category=category;
 
     }
@@ -77,12 +77,12 @@ public class Product {
         this.dimensionsProduct = dimensionsProduct;
     }
 
-    public Order getOrder() {
-        return order;
+    public Trips getOrder() {
+        return trips;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(Trips trips) {
+        this.trips = trips;
     }
 
     public Category getCategory() {

@@ -1,16 +1,14 @@
 package pe.edu.upc.aww.takemehome0_0.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name="users")
 public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idUser;
     @Column(name="name",length = 45,nullable = false)
     private String name;
     @Column(name = "email",nullable = false)
@@ -25,12 +23,12 @@ public class User  {
     public User() {
     }
 
-    public int getId() {
-        return id;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUser(int id) {
+        this.idUser = id;
     }
 
     public String getName() {

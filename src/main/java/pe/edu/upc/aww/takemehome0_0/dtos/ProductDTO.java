@@ -1,7 +1,7 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
 import pe.edu.upc.aww.takemehome0_0.entities.Category;
-import pe.edu.upc.aww.takemehome0_0.entities.Order;
+import pe.edu.upc.aww.takemehome0_0.entities.Trips;
 
 public class ProductDTO {
     private int idProduct;
@@ -9,7 +9,7 @@ public class ProductDTO {
     private String descriptionProduct;
     private int priceProduct;
     private String dimensionsProduct;
-    private Order order;
+    private Trips trips;
     private Category category;
 
     public int getIdProduct() {
@@ -52,12 +52,12 @@ public class ProductDTO {
         this.dimensionsProduct = dimensionsProduct;
     }
 
-    public Order getOrder() {
-        return order;
+    public Trips getOrder() {
+        return trips;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(Trips trips) {
+        this.trips = trips;
     }
 
     public Category getCategory() {

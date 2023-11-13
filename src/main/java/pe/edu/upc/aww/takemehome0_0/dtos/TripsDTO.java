@@ -1,54 +1,27 @@
-package pe.edu.upc.aww.takemehome0_0.entities;
+package pe.edu.upc.aww.takemehome0_0.dtos;
 
-import javax.persistence.*;
+import pe.edu.upc.aww.takemehome0_0.entities.User;
+
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "orders")
+public class TripsDTO {
 
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idOrder;
-    @Column(name = "shipping_date",nullable = false)
+    private int idTrips;
     private LocalDate shippingDate;
-    @Column(name = "arrive_date",nullable = false)
     private LocalDate arriveDate;
-    @Column(name = "destination_country",length = 45,nullable = false)
     private String destinationCountry;
-    @Column(name = "destination_city",length = 45,nullable = false)
     private String destinationCity;
-    @Column(name = "destination_address",length = 75,nullable = false)
     private String destinationAddress;
-    @Column(name = "origin_country",length = 35,nullable = false)
     private String originCountry;
-    @Column(name = "origin_city",length = 45,nullable = false)
     private String originCity;
-    @ManyToOne
-    @JoinColumn(name = "idUser")
     private User user;
 
-    public Order() {
+    public int getIdTrips() {
+        return idTrips;
     }
 
-    public Order(int idOrder,LocalDate shippingDate, LocalDate arriveDate, String destinationCountry, String destinationCity, String destinationAddress, String originCountry,String originCity,User user) {
-        this.idOrder = idOrder;
-        this.shippingDate = shippingDate;
-        this.arriveDate = arriveDate;
-        this.destinationCountry = destinationCountry;
-        this.destinationCity = destinationCity;
-        this.destinationAddress = destinationAddress;
-        this.originCountry = originCountry;
-        this.originCity=originCity;
-        this.user=user;
-    }
-
-    public int getIdOrder() {
-        return idOrder;
-    }
-
-    public void setIdOrder(int idOrder) {
-        this.idOrder = idOrder;
+    public void setIdTrips(int idTrips) {
+        this.idTrips = idTrips;
     }
 
     public LocalDate getShippingDate() {

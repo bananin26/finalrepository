@@ -11,6 +11,7 @@ public class ForumDTO {
     private LocalDate date;
     private User user;
 
+
     public int getIdForum() {
         return idForum;
     }

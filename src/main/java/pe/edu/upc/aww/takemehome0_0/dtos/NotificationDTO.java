@@ -1,5 +1,6 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
+import pe.edu.upc.aww.takemehome0_0.entities.Message;
 import pe.edu.upc.aww.takemehome0_0.entities.User;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ public class NotificationDTO {
     private LocalDate date;
     private Boolean viewed;
     private User user;
+    private Message message;
 
     public int getIdNotification() {
         return idNotification;
@@ -58,5 +60,13 @@ public class NotificationDTO {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
     }
 }

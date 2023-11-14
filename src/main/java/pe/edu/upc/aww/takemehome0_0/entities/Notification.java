@@ -21,15 +21,19 @@ public class Notification {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "message_id")
+    private Message message;
 
     public Notification(){
     }
 
-    public Notification(int idNotification,String title, String description, LocalDate date, User user) {
+    public Notification(int idNotification,String title, String description, LocalDate date, User user, Message message) {
         this.idNotification= idNotification;
         this.description=description;
         this.date=date;
         this.user=user;
+        this.message=message;
         this.viewed=false;
         this.title=title;
     }
@@ -80,5 +84,13 @@ public class Notification {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
     }
 }

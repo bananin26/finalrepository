@@ -8,7 +8,7 @@ public interface ICategoryService {
     public void insert(Category category);
     public List<Category> list();
     public Category listId(int idCategory);
-
+    public void delete(int idCategory);
     List<Category>findByNameCategory(String nameCategory);
 
 }

@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.CategoryDTO;
+import pe.edu.upc.aww.takemehome0_0.dtos.ForumDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.Category;
 import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.ICategoryService;
 
@@ -41,6 +42,18 @@ public class CategoryController {
         ModelMapper m = new ModelMapper();
         Category p = m.map(dto,Category.class);
         cS.insert(p);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        cS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public ForumDTO to_listId(@PathVariable ("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        ForumDTO dto = m.map(cS.listId(id),ForumDTO.class);
+        return dto;
     }
 
 }

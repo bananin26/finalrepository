@@ -13,4 +13,5 @@ public interface ITripsService {
     List<Trips> findByDestinationAddress(String destinationAddress);
     public List<String[]> totalPurchasesByPerson();
 
+
 }

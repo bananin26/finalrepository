@@ -1,6 +1,7 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
 import pe.edu.upc.aww.takemehome0_0.entities.Product;
+import pe.edu.upc.aww.takemehome0_0.entities.User;
 
 import java.time.LocalDate;
 
@@ -11,6 +12,7 @@ public class RecordDTO {
     private LocalDate arriveDate;
     private int points;
     private Product product;
+    private User user;
 
     public int getIdRecord() {
         return idRecord;
@@ -60,4 +62,11 @@ public class RecordDTO {
         this.product = product;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

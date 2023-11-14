@@ -18,7 +18,7 @@ public class Product {
     @Column(name = "dimensionsProduct",nullable = false)
     private String dimensionsProduct;
     @ManyToOne
-    @JoinColumn(name = "id_order")
+    @JoinColumn(name = "id_trips")
     private Trips trips;
     @ManyToOne
     @JoinColumn(name = "id_category")
@@ -77,11 +77,11 @@ public class Product {
         this.dimensionsProduct = dimensionsProduct;
     }
 
-    public Trips getOrder() {
+    public Trips getTrips() {
         return trips;
     }
 
-    public void setOrder(Trips trips) {
+    public void setTrips(Trips trips) {
         this.trips = trips;
     }
 

@@ -21,20 +21,20 @@ public class Record {
     @JoinColumn(name = "product_id")
     private Product product;
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Record(){
     }
 
-    public Record(int idRecord, String payment, LocalDate paymentDate, LocalDate arriveDate, int points,Product product, Category category) {
+    public Record(int idRecord, String payment, LocalDate paymentDate, LocalDate arriveDate, int points,Product product, User user) {
         this.idRecord = idRecord;
         this.payment = payment;
         this.paymentDate = paymentDate;
         this.arriveDate = arriveDate;
         this.points = points;
         this.product = product;
-        this.category = category;
+        this.user = user;
     }
 
     public int getIdRecord() {
@@ -85,11 +85,11 @@ public class Record {
         this.product = product;
     }
 
-    public Category getCategory() {
-        return category;
+    public User getUser() {
+        return user;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

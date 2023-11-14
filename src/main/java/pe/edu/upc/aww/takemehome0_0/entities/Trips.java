@@ -24,6 +24,8 @@ public class Trips {
     private String originCountry;
     @Column(name = "origin_city",length = 45,nullable = false)
     private String originCity;
+    @Column(name="points_travel",nullable = false)
+    private int pointsTravel;
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
@@ -31,7 +33,7 @@ public class Trips {
     public Trips() {
     }
 
-    public Trips(int idTrips, LocalDate shippingDate, LocalDate arriveDate, String destinationCountry, String destinationCity, String destinationAddress, String originCountry, String originCity, User user) {
+    public Trips(int idTrips, LocalDate shippingDate, LocalDate arriveDate, String destinationCountry, String destinationCity, String destinationAddress, String originCountry, String originCity, int pointsTravel,User user) {
         this.idTrips = idTrips;
         this.shippingDate = shippingDate;
         this.arriveDate = arriveDate;
@@ -40,6 +42,7 @@ public class Trips {
         this.destinationAddress = destinationAddress;
         this.originCountry = originCountry;
         this.originCity=originCity;
+        this.pointsTravel = pointsTravel;
         this.user=user;
     }
 
@@ -105,6 +108,14 @@ public class Trips {
 
     public void setOriginCity(String originCity) {
         this.originCity = originCity;
+    }
+
+    public int getPointsTravel() {
+        return pointsTravel;
+    }
+
+    public void setPointsTravel(int pointsTravel) {
+        this.pointsTravel = pointsTravel;
     }
 
     public User getUser() {

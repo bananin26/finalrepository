@@ -52,11 +52,11 @@ public class ProductDTO {
         this.dimensionsProduct = dimensionsProduct;
     }
 
-    public Trips getOrder() {
+    public Trips getTrips() {
         return trips;
     }
 
-    public void setOrder(Trips trips) {
+    public void setTrips(Trips trips) {
         this.trips = trips;
     }
 

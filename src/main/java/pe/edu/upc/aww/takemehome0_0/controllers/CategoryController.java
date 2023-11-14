@@ -50,9 +50,9 @@ public class CategoryController {
     }
 
     @GetMapping("/{id}")
-    public ForumDTO to_listId(@PathVariable ("id") Integer id) {
+    public CategoryDTO to_listId(@PathVariable ("id") Integer id) {
         ModelMapper m = new ModelMapper();
-        ForumDTO dto = m.map(cS.listId(id),ForumDTO.class);
+        CategoryDTO dto = m.map(cS.listId(id),CategoryDTO.class);
         return dto;
     }
 

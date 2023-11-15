@@ -2,6 +2,7 @@ package pe.edu.upc.aww.takemehome0_0.dtos;
 
 import pe.edu.upc.aww.takemehome0_0.entities.Category;
 import pe.edu.upc.aww.takemehome0_0.entities.Trips;
+import pe.edu.upc.aww.takemehome0_0.entities.User;
 
 public class ProductDTO {
     private int idProduct;
@@ -11,6 +12,7 @@ public class ProductDTO {
     private String dimensionsProduct;
     private Trips trips;
     private Category category;
+    private User user;
 
     public int getIdProduct() {
         return idProduct;
@@ -66,5 +68,13 @@ public class ProductDTO {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -24,6 +24,10 @@ public class Product {
     @JoinColumn(name = "id_category")
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
     public Product(){}
 
     public Product(int idProduct, String nameProduct, String descriptionProduct, int priceProduct, String dimensionsProduct, User user, Trips trips, Category category){
@@ -34,6 +38,7 @@ public class Product {
         this.dimensionsProduct=dimensionsProduct;
         this.trips = trips;
         this.category=category;
+        this.user = user;
 
     }
 
@@ -93,5 +98,11 @@ public class Product {
         this.category = category;
     }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

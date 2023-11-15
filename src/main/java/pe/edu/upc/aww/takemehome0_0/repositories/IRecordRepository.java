@@ -10,11 +10,10 @@ import java.util.List;
 @Repository
 public interface IRecordRepository extends JpaRepository<Record,Integer> {
 
-    @Query(value="select u.name, SUM(r.points)\n" +
-            "from users u inner join trips o on u.id_user=o.id_user\n" +
-            "inner join products pr on o.id_trips=pr.id_trips\n" +
-            "inner join records r on pr.id_product=r.product_id\n" +
-            "GROUP BY u.name", nativeQuery = true)
+    @Query(value="SELECT u.name, sum(r.points)\n" +
+            "FROM users u inner join products p on u.id_user=p.id_user\n" +
+            "inner join records r on p.id_product=r.product_id\n" +
+            "group by u.name", nativeQuery = true)
     public List<String[]> countPointsProduct();
 
 

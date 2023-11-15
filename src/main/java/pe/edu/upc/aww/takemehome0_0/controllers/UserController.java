@@ -22,7 +22,6 @@ public class UserController {
     private IUserService uS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void register(@RequestBody UserDTO dto){
         ModelMapper m = new ModelMapper();
         User u= m.map(dto, User.class);
@@ -38,7 +37,6 @@ public class UserController {
     }*/
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id){
         uS.delete(id);
     }
@@ -97,7 +95,6 @@ public class UserController {
         return listaDTO;
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<UserDTO> listar(){
         return uS.list().stream().map(x->{
             ModelMapper m= new ModelMapper();

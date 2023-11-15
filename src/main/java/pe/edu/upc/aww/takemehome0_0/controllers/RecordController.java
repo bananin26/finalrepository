@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.PointsDTO;
+import pe.edu.upc.aww.takemehome0_0.dtos.ProductDTO;
 import pe.edu.upc.aww.takemehome0_0.dtos.RecordDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.Record;
 import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IRecordService;
@@ -29,6 +30,18 @@ public class RecordController {
             ModelMapper m = new ModelMapper();
             return m.map(x, RecordDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        rS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public RecordDTO to_listId(@PathVariable ("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        RecordDTO dto = m.map(rS.listId(id), RecordDTO.class);
+        return dto;
     }
 
     @GetMapping("/CountPoints")

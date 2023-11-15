@@ -15,6 +15,4 @@ public interface IRecordRepository extends JpaRepository<Record,Integer> {
             "inner join records r on p.id_product=r.product_id\n" +
             "group by u.name", nativeQuery = true)
     public List<String[]> countPointsProduct();
-
-
 }

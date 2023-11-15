@@ -2,9 +2,9 @@ package pe.edu.upc.aww.takemehome0_0.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aww.takemehome0_0.dtos.MessageByUserDTO;
+import pe.edu.upc.aww.takemehome0_0.dtos.QuantityMessageReceiveByUserDTO;
+import pe.edu.upc.aww.takemehome0_0.dtos.QuantityMessageSendByUserDTO;
 import pe.edu.upc.aww.takemehome0_0.dtos.UserDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.User;
 import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.IUserService;
@@ -69,12 +69,12 @@ public class UserController {
         return uS.counterUsers();
     }
 
-    @GetMapping("/QuantityMessageSendByUser")
-    public List<MessageByUserDTO> cantidadMensajesEnviadosPorPersona() {
-        List<String[]> lista=uS.quantityMessageSendByPerson();
-        List<MessageByUserDTO> listaDTO= new ArrayList<>();
+    @GetMapping("/QuantityMessageReceiveByUser")
+    public List<QuantityMessageReceiveByUserDTO> cantidadMensajesRecibidosPorPersona() {
+        List<String[]> lista=uS.quantityMessageReceiveByPerson();
+        List<QuantityMessageReceiveByUserDTO> listaDTO= new ArrayList<>();
         for(String[] data:lista){
-            MessageByUserDTO dto= new MessageByUserDTO();
+            QuantityMessageReceiveByUserDTO dto= new QuantityMessageReceiveByUserDTO();
             dto.setName(data[0]);
             dto.setQuantityMessage(Integer.parseInt(data[1]));
             listaDTO.add(dto);
@@ -82,18 +82,20 @@ public class UserController {
         return listaDTO;
     }
 
-    @GetMapping("/QuantityMessageReceiveByUser")
-    public List<MessageByUserDTO> cantidadMensajesRecibidosPorPersona() {
-        List<String[]> lista=uS.quantityMessageReceiveByPerson();
-        List<MessageByUserDTO> listaDTO= new ArrayList<>();
+    @GetMapping("/QuantityMessageSendByUser")
+    public List<QuantityMessageSendByUserDTO> cantidadMensajesEnviadosPorPersona() {
+        List<String[]> lista=uS.quantityMessageSendByPerson();
+        List<QuantityMessageSendByUserDTO> listaDTO= new ArrayList<>();
         for(String[] data:lista){
-            MessageByUserDTO dto= new MessageByUserDTO();
+            QuantityMessageSendByUserDTO dto= new QuantityMessageSendByUserDTO();
             dto.setName(data[0]);
-            dto.setQuantityMessage(Integer.parseInt(data[1]));
+            dto.setQuantityMessageSend(Integer.parseInt(data[1]));
             listaDTO.add(dto);
         }
         return listaDTO;
     }
+
+
     @GetMapping
     public List<UserDTO> listar(){
         return uS.list().stream().map(x->{

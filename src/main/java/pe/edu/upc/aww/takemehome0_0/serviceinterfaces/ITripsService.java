@@ -11,7 +11,7 @@ public interface ITripsService {
     public void delete(int idTrips);
     public Trips listId(int idTrips);
     List<Trips> findByDestinationAddress(String destinationAddress);
-    public List<String[]> totalPurchasesByPerson();
+    public List<String[]> totalTripsByPerson();
 
 
 }

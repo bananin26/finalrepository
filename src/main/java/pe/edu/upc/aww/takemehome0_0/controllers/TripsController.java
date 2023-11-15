@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aww.takemehome0_0.dtos.TripsDTO;
-import pe.edu.upc.aww.takemehome0_0.dtos.TotalPurchasesByUserDTO;
+import pe.edu.upc.aww.takemehome0_0.dtos.TotalTripsByUserDTO;
 import pe.edu.upc.aww.takemehome0_0.entities.Trips;
 import pe.edu.upc.aww.takemehome0_0.serviceinterfaces.ITripsService;
 
@@ -54,17 +54,18 @@ public class TripsController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("/SumatoryPurchasesByUser")
-    public List<TotalPurchasesByUserDTO> SumatoriaComprasPorUsuario() {
-        List<String[]> lista =oR.totalPurchasesByPerson();
-        List<TotalPurchasesByUserDTO> listaDTO= new ArrayList<>();
+    @GetMapping("/SumatoryTripsByUser")
+    public List<TotalTripsByUserDTO> SumatoriaComprasPorUsuario() {
+        List<String[]> lista =oR.totalTripsByPerson();
+        List<TotalTripsByUserDTO> listaDTO= new ArrayList<>();
         for(String[] data:lista){
-            TotalPurchasesByUserDTO dto= new TotalPurchasesByUserDTO();
+            TotalTripsByUserDTO dto= new TotalTripsByUserDTO();
             dto.setName(data[0]);
             dto.setTotalPurchases(Integer.parseInt(data[1]));
             listaDTO.add(dto);
         }
         return listaDTO;
     }
+
 
 }

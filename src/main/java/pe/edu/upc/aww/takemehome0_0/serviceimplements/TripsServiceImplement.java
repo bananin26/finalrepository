@@ -37,9 +37,7 @@ public class TripsServiceImplement implements ITripsService {
     public List<Trips> findByDestinationAddress(String destinationAddress) {
         return oR.findByDestinationAddress(destinationAddress);
     }
-
-    public List<String[]> totalPurchasesByPerson(){
-        return oR.totalPurchasesByPerson();
+    public List<String[]> totalTripsByPerson(){
+        return oR.totalTripsByPerson();
     }
-
 }

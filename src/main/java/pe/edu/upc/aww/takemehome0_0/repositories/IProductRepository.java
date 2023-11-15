@@ -9,10 +9,10 @@ import java.util.List;
 public interface IProductRepository extends JpaRepository<Product,Integer> {
     List<Product>findByNameProduct(String nameProduct);
 
-    @Query("select u.name, sum(p.idProduct)\n" +
-            "from User u inner join Product p\n" +
-            "on u.idUser=p.idProduct \n" +
-            "group by u.name")
+    @Query(value="SELECT u.name, count(p.id_product)\n" +
+            "FROM products p inner join users u\n" +
+            "on p.id_user=u.id_user\n" +
+            "group by u.name", nativeQuery = true)
     public List<String[]> countProductsWithUsers();
     @Query("SELECT o.idTrips, p.descriptionProduct\n" +
             "FROM Trips o INNER JOIN Product p \n" +

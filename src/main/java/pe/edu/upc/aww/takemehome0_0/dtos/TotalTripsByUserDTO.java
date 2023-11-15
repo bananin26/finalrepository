@@ -1,6 +1,6 @@
 package pe.edu.upc.aww.takemehome0_0.dtos;
 
-public class TotalPurchasesByUserDTO {
+public class TotalTripsByUserDTO {
 
     private String name;
 

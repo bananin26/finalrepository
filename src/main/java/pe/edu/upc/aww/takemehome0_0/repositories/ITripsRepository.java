@@ -13,5 +13,5 @@ public interface ITripsRepository extends JpaRepository<Trips,Integer> {
             "from users u inner join trips t\n" +
             "on u.id_user=t.id_user\n" +
             "group by u.name\t", nativeQuery = true)
-    public List<String[]> totalPurchasesByPerson();
+    public List<String[]> totalTripsByPerson();
 }
